@@ -1,0 +1,1 @@
+return ((argument0)*2654435761 mod power(2,32)) / power(2,32);

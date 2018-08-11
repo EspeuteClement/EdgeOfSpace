@@ -1,7 +1,8 @@
 /// @description
 
-draw_self();
+var turn_frame = _turn_timer div _turn_timer_rate;
+turn_frame = min(turn_frame, image_number);
 
-draw_set_font(fDebug);
-draw_set_color(c_white);
-draw_text(x,y-16, string(x) + "," + string(y));
+draw_sprite_ext(sprite_index, turn_frame, x,y, 1, _turn_facing, 0,c_white, 1);
+
+draw_sprite(_boost_image, _boost_frame, x - 10 + irandom_range(-1,1), y + irandom_range(-1,1));

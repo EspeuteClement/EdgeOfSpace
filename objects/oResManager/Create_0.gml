@@ -1,6 +1,5 @@
 /// @description Create surface
 
-
 _TargetZoom		= _BaseZoom;
 _TargetZoomPrev	= 0; // Force initialisation in step event
 

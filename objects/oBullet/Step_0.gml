@@ -12,12 +12,14 @@ if (image_index > (image_number - 1))
 var col = instance_place(x,y, oFoeBase)
 if (col)
 {
-	var dmg = _dammage;
+	var dmg = _damage;
+	hurt(dmg, col);
 	with(col)
 	{
-		_life -= dmg;
-	}	
+		x += 4;
+	}
 	instance_destroy(self);
+	camera_shake(2,2,0.5);
 }
 
 x += _vx;

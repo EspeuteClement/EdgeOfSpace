@@ -3,7 +3,8 @@
 enum GameState
 {
 	PAUSED,
-	RUN
+	RUN,
+	GAME_OVER,
 };
 
 _state = GameState.RUN;
