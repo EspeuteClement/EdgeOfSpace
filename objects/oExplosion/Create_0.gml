@@ -1,3 +1,3 @@
 /// @description
 
-_time = 10;
+_time = 6;

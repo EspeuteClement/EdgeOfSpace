@@ -110,7 +110,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "2",
+            "value": "1.5",
             "varName": "_speed",
             "varType": 0
         },
@@ -127,6 +127,20 @@
             "value": "10",
             "varName": "_life_max",
             "varType": 1
+        },
+        {
+            "id": "40d69fca-dfaf-44df-aa14-cd41fee91ad9",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "3",
+            "varName": "_wall_push",
+            "varType": 0
         }
     ],
     "solid": false,

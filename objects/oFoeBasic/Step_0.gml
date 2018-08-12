@@ -3,11 +3,12 @@
 // Inherit the parent event
 event_inherited();
 
-if (oGameManager._state != GameState.RUN)
+if (oGameManager._state == GameState.PAUSE)
 	return;
 	
-if (_fire_delay <= 0)
+if (_fire_delay <= 0 && instance_number(oShip) > 0)
 {
+		
 	with(instance_create_depth(x,y,depth,oFoeBulletBase))
 	{
 		var vx = oShip.x - x;
@@ -18,6 +19,13 @@ if (_fire_delay <= 0)
 		
 		_vx = vx * 2.5;
 		_vy = vy * 2.5;
+	}
+	
+	foe_sound_fire(1);
+	
+	with(oFoeBasic)
+	{
+		_fire_delay += 5;	
 	}
 	_fire_delay = _fire_rate;
 }

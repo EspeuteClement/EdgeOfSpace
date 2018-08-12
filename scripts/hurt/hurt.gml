@@ -9,5 +9,10 @@ with(argument1)
 	{
 		_life -= argument0;
 		_iframes = _iframes_max;
+		
+		if (object_index == oShip)
+		{
+			audio_play_sound(snHurtShip, 1, false);
+		}
 	}
 }

@@ -9,5 +9,5 @@ if (player)
 {
 	hurt(_damage, player);
 	camera_shake(5,5,0.5);
-	instance_destroy(); 
+	instance_destroy();
 }

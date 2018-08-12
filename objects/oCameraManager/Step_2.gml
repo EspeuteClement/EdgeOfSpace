@@ -1,5 +1,7 @@
 /// @description
 
+_camera = view_camera[0];
+
 var _x = x + irandom_range(-_shake_x, _shake_x);
 var _y = y + irandom_range(-_shake_y, _shake_y);
 

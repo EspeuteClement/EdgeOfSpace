@@ -3,10 +3,10 @@
 // Inherit the parent event
 event_inherited();
 
-if (oGameManager._state != GameState.RUN)
+if (oGameManager._state == GameState.PAUSE)
 	return;
 	
-if (_fire_delay <= 0)
+if (_fire_delay <= 0 && instance_number(oShip) > 0)
 {
 	if (_burst_frames == 0)
 	{
@@ -18,7 +18,7 @@ if (_fire_delay <= 0)
 		vy = vy / len;
 		
 		_lock_x = vx;
-		_lock_y = vy;	
+		_lock_y = vy;
 	}
 
 		
@@ -31,6 +31,9 @@ if (_fire_delay <= 0)
 		}
 		_lock_x*=1.45;
 		_lock_y*=1.45;
+		
+		foe_sound_fire(1 - (_burst_frames / _burst_frames_max) * 0.25);
+
 	}
 	
 	_burst_frames --;

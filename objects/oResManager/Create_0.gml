@@ -8,3 +8,5 @@ _IsFullscreen		= false;
 _IsFullscreenPrev	= _IsFullscreen;
 
 _UpadateAppSurface	= true;
+
+_CameraInit = false;

@@ -4,7 +4,10 @@ enum GameState
 {
 	PAUSED,
 	RUN,
+	PAUSE,
 	GAME_OVER,
 };
 
-_state = GameState.RUN;
+
+
+_state = GameState.PAUSE;

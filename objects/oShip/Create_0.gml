@@ -1,15 +1,28 @@
 /// @description
 
+enum WeaponType
+{
+	SMALL,
+	BIG,
+	TRIPLE,
+	
+	COUNT
+};
+
+_current_weapon = WeaponType.SMALL;
+
+
 _life_max = 10;
 _life = _life_max;
 
 _vx = 0;
 _vy = 0;
 
-_speed_x = 2;
-_speed_y = 2;
+_speed = 3;
+_speed_fire = 2;
 
-_fire_rate = 4;
+
+_fire_rate = 6;
 _fire_timer = 0;
 
 _iframes = 0;

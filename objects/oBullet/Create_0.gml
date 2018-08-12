@@ -1,5 +1,4 @@
 /// @description
 
-_damage	= 5;
-_vx			= 10; 
+_vy = 0;
 _is_active = false;

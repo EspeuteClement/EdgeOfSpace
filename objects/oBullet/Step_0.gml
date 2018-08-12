@@ -1,6 +1,10 @@
 /// @description
 
-if (oGameManager._state != GameState.RUN || !_is_active)
+if (oGameManager._state == GameState.PAUSE)
+	return;
+	
+// Fix web spawn tick
+if (!_is_active)
 	return;
 	
 if (bbox_left > room_width)
@@ -16,10 +20,13 @@ if (col)
 	hurt(dmg, col);
 	with(col)
 	{
-		x += 4;
+		x += 2;
 	}
 	instance_destroy(self);
 	camera_shake(2,2,0.5);
+	var sn = audio_play_sound(snHurt, 0, false);
+	audio_sound_pitch(sn, random_range(0.8,1.2));
 }
 
 x += _vx;
+y += _vy;

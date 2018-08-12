@@ -14,7 +14,13 @@
 	}
 }*/
 
-draw_set_color(c_white);
+
+var alpha = (1 - clamp(_vx, -1, 0) / -1);
+
+var amt = 0.25;
+
+var c = make_color_hsv(0,0,255 * (1-amt + amt*alpha));
+draw_set_color(c);
 draw_rectangle(-15,-15,x, room_height+15, false);
 
 var time = get_timer()/10000;
@@ -26,7 +32,10 @@ for (var _y = -1; _y <= room_height div 32; _y ++)
 		
 		var r = 32;
 		
-		var c = make_color_hsv(0,0,255);
+		
 		draw_circle_color(cx,cy,r, c, c, false);
 }
 
+
+
+draw_set_color(c_white);
