@@ -22,8 +22,8 @@ global.weapon_db =
 	["SMALL", 2],
 	["HEAVY GUN", 1.5],
 	["TRIPLE SHOT", 2],
-	["MINIGUN", 0.75],
-	["LASER", 0.5]
+	["MINIGUN", 1.0],
+	["LASER", 0.75]
 ]
 
 _current_weapon = WeaponType.SMALL;

@@ -87,7 +87,7 @@ switch (_current_weapon)
 			if (_k_fire)
 			{
 				instance_create_depth(x + 16, y, depth, oBulletBig);	
-				_fire_timer = _fire_rate*1.2;
+				_fire_timer = _fire_rate*1.15;
 				var snd = audio_play_sound(snBigFire, 0.1, false);
 				audio_sound_pitch(snd, random_range(0.90,1.10));
 				x -= 1;
@@ -122,7 +122,7 @@ switch (_current_weapon)
 					_vy = lengthdir_y(spd, -30);
 				}
 				
-				_fire_timer = _fire_rate*1.1;
+				_fire_timer = _fire_rate*1.5;
 				var snd = audio_play_sound(snBlaster, 0.1, false);
 				audio_sound_pitch(snd, random_range(0.90,1.10));
 			}
