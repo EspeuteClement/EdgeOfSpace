@@ -14,3 +14,8 @@ if (instance_number(oShip) > 0)
 		}
 	}
 }
+
+if (instance_number(oShip) > 0)
+{
+	_score = oShip._score;
+}

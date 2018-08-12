@@ -12,9 +12,9 @@ if (oGameManager._state == GameState.GAME_OVER)
 }
 else if (oGameManager._state == GameState.RUN)
 {
-	_vx = approach(_vx, 0.1 + (x/room_width) * 0.5, 1);
+	_vx = approach(_vx, 0.15 + (x/room_width) * 0.3, 1.0);
 
-	if (x/room_width > 0.60)
+	if (x/room_width > _limit_x)
 	{
 		_vx = 2;
 	}

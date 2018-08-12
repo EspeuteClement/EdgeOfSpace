@@ -10,7 +10,8 @@
         "47db1e51-c86d-4e7f-a41f-3aaae236aea2",
         "b281ab78-e130-49bc-9c15-4b69bf1e5e81",
         "68ee437c-a33f-4b74-bb09-bcfa9a198085",
-        "4b3102fb-a7b5-4574-a268-86050d54e191"
+        "4b3102fb-a7b5-4574-a268-86050d54e191",
+        "45061583-f764-42cf-a8e6-d864bdb4a444"
     ],
     "filterType": "GMSprite",
     "folderName": "FOES",

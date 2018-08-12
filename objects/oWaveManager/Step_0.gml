@@ -10,7 +10,7 @@ if (ds_list_size(_wave_queue) <= 0)
 }
 
 _delay = max(0, _delay-1);
-if (_delay <= 0 && instance_number(oFoeBase) <= 0 && instance_number(oFoeBulletBase) <= 0)
+if (_delay <= 0 && instance_number(oFoeBase) <= 0)
 {
 	var _layer = _wave_queue[|0];
 	ds_list_delete(_wave_queue, 0);

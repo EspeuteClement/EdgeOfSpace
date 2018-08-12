@@ -1,3 +1,3 @@
 /// @description
 
-game_end();
+_width = 4;

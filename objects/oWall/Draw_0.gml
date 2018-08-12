@@ -17,7 +17,18 @@
 
 var alpha = (1 - clamp(_vx, -1, 0) / -1);
 
-var amt = 0.25;
+
+var amt = 0.15;
+
+var _limit = (_limit_x - x/room_width);
+if (_limit < 0.1 && _limit > 0.0)
+{
+	alpha = (get_timer() div 200000) mod 2;
+	alpha *= 1;
+	
+	amt = 0.25;
+}
+
 
 var c = make_color_hsv(0,0,255 * (1-amt + amt*alpha));
 draw_set_color(c);

@@ -8,6 +8,6 @@ var dmg = _damage;
 if (player)
 {
 	hurt(_damage, player);
-	camera_shake(5,5,0.5);
+	camera_shake(6,6,0.5);
 	instance_destroy();
 }

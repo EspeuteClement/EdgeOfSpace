@@ -5,12 +5,15 @@ if (oGameManager._state == GameState.PAUSE)
 
 var deadzone = 0.2;
 
+var weap_carac = global.weapon_db[_current_weapon];
+_speed_fire = weap_carac[WDB.SPEED_FIRE];
+
 if (oGameManager._state == GameState.RUN)
 {
-	_k_left		= keyboard_check(vk_left)	|| gamepad_axis_value(0, gp_axislh) < - deadzone;
-	_k_right	= keyboard_check(vk_right)	|| gamepad_axis_value(0, gp_axislh) > deadzone;
-	_k_up		= keyboard_check(vk_up)		|| gamepad_axis_value(0, gp_axislv) < - deadzone;
-	_k_down		= keyboard_check(vk_down)	|| gamepad_axis_value(0, gp_axislv) > deadzone;
+	_k_left		= keyboard_check(vk_left)	|| keyboard_check(ord("S"))	|| gamepad_axis_value(0, gp_axislh) < - deadzone;
+	_k_right	= keyboard_check(vk_right)	|| keyboard_check(ord("F")) || gamepad_axis_value(0, gp_axislh) > deadzone;
+	_k_up		= keyboard_check(vk_up)		|| keyboard_check(ord("E")) || gamepad_axis_value(0, gp_axislv) < - deadzone;
+	_k_down		= keyboard_check(vk_down)	|| keyboard_check(ord("D")) || gamepad_axis_value(0, gp_axislv) > deadzone;
 	_k_fire		= keyboard_check(vk_space)	|| gamepad_button_check(0, gp_face1);
 	_k_action	= keyboard_check(vk_lshift);
 }
@@ -23,6 +26,7 @@ else
 	_k_fire		= false;
 	_k_action	= false;
 }
+
 
 
 
@@ -56,7 +60,7 @@ else
 	_turn_timer = max(_turn_timer - 1, 0);	
 }
 
-
+var keep_lazer = false;
 switch (_current_weapon)
 {
 	case WeaponType.SMALL:
@@ -86,6 +90,8 @@ switch (_current_weapon)
 				_fire_timer = _fire_rate*1.2;
 				var snd = audio_play_sound(snBigFire, 0.1, false);
 				audio_sound_pitch(snd, random_range(0.90,1.10));
+				x -= 1;
+				camera_shake(1,1,0.5);
 			}
 		}
 		else
@@ -126,6 +132,55 @@ switch (_current_weapon)
 			_fire_timer --;	
 		}
 	} break;
+	
+	case WeaponType.MINIGUN:
+	{
+		if (_fire_timer <= 0)
+		{
+			if (_k_fire)
+			{
+				instance_create_depth(x + 16, y, depth, oBulletMini);
+				_fire_timer = 2;
+				var snd = audio_play_sound(snBlaster, 0.1, false);
+				audio_sound_pitch(snd, random_range(1.11,1.20));
+				x -= 1;
+				camera_shake(1,1,0.5);
+			}
+		}
+		else
+		{
+			_fire_timer --;	
+		}
+	} break;
+	
+	case WeaponType.LASER:
+	{
+		if (_k_fire)
+		{
+			instance_create_depth(x + 16, y, depth, oLaser);
+			keep_lazer = true;
+		}
+		_fire_timer = 0;
+		
+		
+		//audio_sound_pitch(snd, random_range(1.11,1.20));
+	} break;
+}
+
+if (keep_lazer)
+{
+	if (!_snd_lazer)
+	{
+		_snd_lazer = audio_play_sound(snLazer, 0, true);		
+	}
+}
+else
+{
+	if (_snd_lazer)
+	{
+		audio_stop_sound(_snd_lazer);
+		_snd_lazer = 0;
+	}
 }
 
 
@@ -133,7 +188,7 @@ switch (_current_weapon)
 
 if (bbox_left < oWall.bbox_right)
 {
-	hurt(1,self);
+	hurt(2,self);
 	camera_shake(7,7,0.5);
 }
 

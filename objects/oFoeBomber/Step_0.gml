@@ -10,7 +10,7 @@ if (_fire_delay <= 0 && instance_number(oShip) > 0)
 {
 	with(instance_create_depth(x,y,depth,oFoeBomb))
 	{
-
+		_vx = 2;
 	}
 	foe_sound_fire(0.7);
 	_fire_delay = _fire_rate;

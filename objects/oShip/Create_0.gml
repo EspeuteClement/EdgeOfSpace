@@ -5,12 +5,32 @@ enum WeaponType
 	SMALL,
 	BIG,
 	TRIPLE,
+	MINIGUN,
+	LASER,
 	
 	COUNT
 };
 
+enum WDB
+{
+	TEXT,
+	SPEED_FIRE
+};
+
+global.weapon_db = 
+[
+	["SMALL", 2],
+	["HEAVY GUN", 1.5],
+	["TRIPLE SHOT", 2],
+	["MINIGUN", 0.75],
+	["LASER", 0.5]
+]
+
 _current_weapon = WeaponType.SMALL;
 
+_score = 0;
+
+_snd_lazer = 0;
 
 _life_max = 10;
 _life = _life_max;
@@ -26,7 +46,7 @@ _fire_rate = 6;
 _fire_timer = 0;
 
 _iframes = 0;
-_iframes_max = 10;
+_iframes_max = 30;
 
 _turn_timer = 0;
 _turn_timer_rate = 4;

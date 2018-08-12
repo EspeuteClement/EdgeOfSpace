@@ -4,9 +4,11 @@
 event_inherited();
 
 
-if (_timer <= 0)
+if (abs(_vx) < 0.02 && abs(_vy) < 0.02)
 {
 	instance_destroy();	
 }
 
-_timer --;
+
+_vx *=0.95;
+_vy *=0.95;

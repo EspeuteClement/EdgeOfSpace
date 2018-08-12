@@ -1,6 +1,7 @@
 /// @description
 
 _life = _life_max;
+global._exploded_on_this_frame = false; 
 
 _vx = 0;
 _vy = 0;

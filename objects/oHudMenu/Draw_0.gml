@@ -16,8 +16,22 @@ draw_text(room_width/2, pos-1,txt);
 
 draw_set_color(c_white);
 draw_text(room_width/2, pos, txt);
+
+draw_set_font(fDebug);
+
+if(current_second mod 2)
+{
+	draw_text_outline(room_width/2, room_height * 1/2, "--- Press Space or Start to play ---", c_black, c_white);	
+}
+
+draw_text_outline(room_width/2, room_height * 4/5, " Arrows/ESDF/Left Stick to move\nSpace/Button A to shoot", c_black, c_white);	
+
+	
+	
 draw_set_font(fDebug);
 draw_set_color(c_black);
-	
+
+
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+
