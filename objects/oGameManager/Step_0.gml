@@ -47,7 +47,7 @@ if (keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(0, gp_star
 {
 	audio_stop_sound(_snd_music);
 	audio_stop_sound(_snd_music_muted);
-	
+	audio_stop_all();
 	
 	event_perform(ev_create, 0);
 	room_goto_previous();
